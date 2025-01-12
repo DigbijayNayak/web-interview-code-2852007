@@ -1,5 +1,5 @@
 let gulp = require('gulp'),
-  sass = require('gulp-sass'),
+  sass = require('gulp-sass')(require('sass')),
   babel = require('gulp-babel'),
   webserver = require('gulp-server-io'),
   postcss = require('gulp-postcss'),

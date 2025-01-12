@@ -13,9 +13,10 @@
     "gulp": "github:gulpjs/gulp",
     "gulp-babel": "^8.0.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^6.0.0",
     "gulp-server-io": "^1.5.1",
-    "postcss": "^8.0.5"
+    "postcss": "^8.0.5",
+    "sass": "^1.83.1"
   },
   "author": "Ray Villalobos",
   "false": {}
