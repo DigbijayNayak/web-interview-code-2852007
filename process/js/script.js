@@ -122,7 +122,7 @@ function makeBoxes(howMany) {
         }
     }
 
-    myNode.addEventListener('click', function(e){
+    myNode.addEventListener('click', function (e) {
         e.target.parentNode.removeChild(e.target);
     }, false);
 
@@ -132,24 +132,18 @@ makeBoxes(20)
 
 // constructor
 
-function Hamburger(nodeName) {
+var Hamburger = (nodeName) => {
     var myNode = document.querySelector(nodeName + ' .hamburger');
-  
+
     return {
-      activate: function() {
-        myNode.addEventListener('click', function(e) {
-        myNode.parentNode.querySelector('.navbar').classList.toggle('hidden');
-        }, false);
-      }, // activate
-      hide: function() {
-        myNode.parentNode.querySelector('.navbar').classList.add('hidden');
-      } // hide
+        activate: () => myNode.addEventListener('click', (e) => myNode.parentNode.querySelector('.navbar').classList.toggle('hidden'), false), // activate
+        hide: () => myNode.parentNode.querySelector('.navbar').classList.add('hidden') // hide
     } //return
-  } //Hamburger
-  
-  var topMenu = new Hamburger('#topMenu');
-  topMenu.activate();
-  
-  var bottomMenu = new Hamburger('#bottomMenu');
-  bottomMenu.activate();
-  bottomMenu.hide();
+} //Hamburger
+
+var topMenu = new Hamburger('#topMenu');
+topMenu.activate();
+
+var bottomMenu = new Hamburger('#bottomMenu');
+bottomMenu.activate();
+bottomMenu.hide();
