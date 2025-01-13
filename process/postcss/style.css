@@ -58,3 +58,9 @@ body { font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Ro
   float: left;
   margin: 5px;
 }
+
+.ajax {
+  display: block;
+  float: left;
+  margin-left: 10%;
+}
