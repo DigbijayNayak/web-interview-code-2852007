@@ -67,8 +67,10 @@ $(function () {
 
 // AJAX Request
 
-var data, result;
+var data, result, DOMNode;
 var request = new XMLHttpRequest();
+
+DOMNode = document.querySelector('.artists');
 
 request.open('GET', 'js/data.json');
 
@@ -82,8 +84,18 @@ request.onreadystatechange = function () {
         // console.log(data);
         // console.log(request);
 
-        result = new EJS({ url: 'js/template.ejs' }).render(data.artists);
-        document.querySelector('.artists').innerHTML = result;
+        for (var item in data.artists) {
+            if (data.artists.hasOwnProperty(item)) {
+                var element = data.artists[item];
+                var listItem = document.createElement('div');
+                listItem.className = 'artist';
+                listItem.innerHTML = '<h4>' + element.name + '</h4>' + '<p>' + element.bio + '</p>';
+                DOMNode.appendChild(listItem);                
+            }
+        }
+
+        // result = new EJS({ url: 'js/template.ejs' }).render(data.artists);
+        // document.querySelector('.artists').innerHTML = result;
 
     }
 }
