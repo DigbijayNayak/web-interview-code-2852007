@@ -67,7 +67,7 @@ $(function() {
 
 // AJAX Request
 
-var data;
+var data, result;
 var request = new XMLHttpRequest();
 
 request.open('GET', 'js/data.json');
@@ -79,8 +79,11 @@ request.onreadystatechange = function() {
     ) {
 
         data = JSON.parse(request.responseText);
-        console.log(data);
-        console.log(request);
+        // console.log(data);
+        // console.log(request);
+
+        result = new EJS({url:'js/template.ejs'}).render(data.artists);
+        document.querySelector('.artists').innerHTML = result;
 
     }
 }
