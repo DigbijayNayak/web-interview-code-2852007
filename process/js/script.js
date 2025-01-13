@@ -147,3 +147,20 @@ topMenu.activate();
 var bottomMenu = new Hamburger('#bottomMenu');
 bottomMenu.activate();
 bottomMenu.hide();
+
+// Fetch API
+
+var getArtists = new Request('js/data_artists.json', {
+    method: 'GET'
+})
+
+var artists = fetch(getArtists).then(function(response) {
+    return response.json();
+})
+
+document.querySelector('.load-infos')
+    .addEventListener('click', function() {
+    artists.then(function(data) {
+        console.log(data);
+    })
+})
