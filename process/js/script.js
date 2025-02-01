@@ -230,3 +230,12 @@ special.addEventListener('click', function(e){
     e.target.style = 'background-color: 6D73C2;';
     e.stopPropagation();
 }, false);
+
+// Callbacks
+var tips = document.querySelectorAll('.hastip');
+
+for(var i = 0; i < tips.length; i++) {
+  tips[i].addEventListener('click', function(e) {
+    e.target.querySelector('.tooltips').classList.toggle('active');
+  }, false);
+}
