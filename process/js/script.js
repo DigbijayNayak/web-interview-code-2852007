@@ -214,3 +214,19 @@ document.querySelector('.load-infos')
 //     '#DA3637', //red
 //     '#F0AD4E' //yellow
 //   ]);
+
+var boxes = document.querySelector('.boxess');
+var special = document.querySelector('#special');
+
+boxes.addEventListener('click', function(e) {
+    console.log(e);
+    if(e.target.className === 'box'){
+        e.target.parentNode.removeChild(e.target);
+    }
+}, true);
+
+special.addEventListener('click', function(e){
+    console.log(e);
+    e.target.style = 'background-color: 6D73C2;';
+    e.stopPropagation();
+}, false);
